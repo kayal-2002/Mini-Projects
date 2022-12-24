@@ -1,0 +1,209 @@
+<html>
+    <head><title>product page</title> 
+    <style>  
+    body{
+        height:1200px;
+    }
+    #container{ 
+        margin-top:50px; 
+        margin-left:50px;
+        width:100% 
+        height:700px;
+        } 
+        #j,#j1,#j2,#j3{ 
+            display:none;
+        } 
+        input[type="submit"]:active{
+          transform:translateY(5px);  
+        } 
+        #root,#bill{ 
+            display:none;
+        } 
+    ul{ 
+        font-size:30px; 
+        list-style-type:disc;
+    } 
+    #d{ 
+    font-size: 80px;
+  color:dodgerblue;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; 
+  display:none;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+    </style> 
+    </head>  
+    <body> 
+        <h1>WELCOME USERNAME</h1> 
+        <h1>PLEASE PLACE THE ORDER </h1> 
+        <div id="container" style="width:"> 
+            <div style="width:25%;float:left">  
+                <img src="brinjal.jpg" style="cursor:pointer" width="300px" height="300px" onclick="document.getElementById('j').style.display='block'" /> 
+                <p>BRINJAL: 40</p> 
+                <span id="j" >QTY   <input type="number" style="margin-left:20px;width:40px" id="bj" /> <input type="button" style="margin-left:20px;width:40px" value="add"  id="b" onclick="add(event)" /> </span> 
+                
+
+
+            </div>  
+            <div style="width:25%;float:left">  
+                <img src="capsicum.jpeg" style="cursor:pointer" width="300px" height="300px" onclick="document.getElementById('j1').style.display='block'" /> 
+                <p>CAPSICUM: 50</p> 
+                <span id="j1" >QTY   <input type="number" style="margin-left:20px;width:40px"  id="capj1"/>  <input type="button" style="margin-left:20px;width:40px" value="add"  id="cap" onclick="add(event)" />
+ </span> 
+                
+
+            </div>  
+            <div style="width:25%;float:left">  
+                <img src="carrot.jpg" style="cursor:pointer" width="300px" height="300px" onclick="document.getElementById('j2').style.display='block'" /> 
+                <p>CARROT: 70</p> 
+                <span id="j2" >QTY   <input type="number" style="margin-left:20px;width:40px" id="cj2" />  <input type="button" style="margin-left:20px;width:40px" value="add"   id="c" onclick="add(event)" /> </span> 
+                
+
+
+            </div>  
+            <div style="width:25%;float:left">  
+                <img src="ladiesfinger.jpg" style="cursor:pointer" width="300px" height="300px" onclick="document.getElementById('j3').style.display='block'" /> 
+                <p>LADIES FINGER: 20</p> 
+                <span id="j3" >QTY   <input type="number" style="margin-left:20px;width:40px"  id="lj3"/>  <input type="button" style="margin-left:20px;width:40px" value="add"  id="l" onclick="add(event)"/> </span> 
+                
+
+
+            </div>  
+        </div>
+            <div style="height:300px;margin-top:30%">
+                <br>
+                <input type="submit" value="Add To Cart" style="width:10%;background-color:rgb(33, 178, 33);height:50px;box-shadow:3px 5px black" onclick="document.getElementById('root').style.display='block'"  />
+                
+                <input type="submit" value="Checkout cart" style="float:right;width:10%;background-color:rgb(33, 178, 33);height:50px;box-shadow:3px 5px black" onclick="cal()"  />
+                <ul id="root" style="margin-top:50px">
+
+                </ul>
+                 <h2 id="bill" style="margin-top:50px;text-align:center;font-size:30px"></h2>
+        
+        
+        
+            <h1 id="d">Thankyou for purchasing! &#128722; Come Again!!! &#128526; &#128519;</h1>
+        
+        
+            </div> 
+            <script>  
+              const arr=[];
+              document.getElementById('root').innerHTML=''; 
+              
+            function add(event){   
+                
+                if(event.target.id=="b"){  
+                    
+                    var no=document.getElementById("bj").value;  
+                    if(no==undefined || no<=0){ 
+                        window.alert('enter the quantity');
+                    } 
+                    else{
+                    ul=document.getElementById('root');
+                    value= "Brinjal: "+no+"Kg  ";  
+                    li=document.createElement('li'); 
+                    li.appendChild(document.createTextNode(value)); 
+                    ul.appendChild(li);
+                    
+                    arr.push(["brinjal",no]); 
+                    }
+
+                } 
+                else if(event.target.id=="cap"){ 
+                    var no=document.getElementById("capj1").value;  
+                    if(no==undefined || no<=0){ 
+                        window.alert('enter the quantity');
+                    } 
+                    else{
+                    ul=document.getElementById('root');
+                    value="Capsicum: "+no+"kg   ";
+                    li=document.createElement('li'); 
+                    li.appendChild(document.createTextNode(value)); 
+                    ul.appendChild(li);
+                    
+                    arr.push(["capsicum",no]);
+
+                    }
+                } 
+                else if(event.target.id=="c"){ 
+                    var no=document.getElementById("cj2").value;  
+                    if(no==undefined || no<=0){ 
+                        window.alert('enter the quantity');
+                    } 
+                    else{
+                    ul=document.getElementById('root');
+                    value="Carrot: "+no+"kg    ";
+                    li=document.createElement('li'); 
+                    li.appendChild(document.createTextNode(value)); 
+                    ul.appendChild(li);
+                    
+                    arr.push(["carrot",no]);
+                    }
+
+                } 
+               else if(event.target.id=="l"){ 
+                    var no=document.getElementById("lj3").value; 
+                    if(no==undefined || no<=0){ 
+                        window.alert('enter the quantity');
+                    } 
+                    else{
+                    ul=document.getElementById('root');
+                    value="Ladies Finger: "+no+"kg     ";
+                    li=document.createElement('li'); 
+                    li.appendChild(document.createTextNode(value)); 
+                    ul.appendChild(li);
+                    
+                    arr.push(["ladiesfinger",no]); 
+                    }
+ 
+
+                }
+                
+            } 
+        
+        
+            function cal(){ 
+                var cost=0; 
+                 var j=0;
+                for(var i=0;i<arr.length;i++){ 
+                
+                        if(arr[i][j]=="brinjal"){  
+                             no=parseInt(arr[i][j+1])*40; 
+                             cost+=no;
+
+                        } 
+                       else  if(arr[i][j]=="capsicum"){  
+                             no=parseInt(arr[i][j+1])*50; 
+                             cost+=no;
+
+                        } 
+                       else if(arr[i][j]=="carrot"){  
+                             no=parseInt(arr[i][j+1])*70; 
+                             cost+=no;
+
+                        } 
+                      else  if(arr[i][j]=="ladiesfinger"){  
+                             no=parseInt(arr[i][j+1])*20; 
+                             cost+=no;
+
+                        }
+                    }
+                 
+             document.getElementById('bill').innerHTML="The Cost of Your Purchase is:  "+cost; 
+             document.getElementById('bill').style.display='block'; 
+             document.getElementById('d').style.display='block';
+                }
+            </script>
+    </body>
+    
+</html>

@@ -1,0 +1,113 @@
+<html>
+    <head>
+      <title>kayal's grocery</title> 
+      <style>   
+      body{ 
+        width:100%; 
+        height:100%; 
+        background:url('grocery.jpeg'); 
+        background-repeat:none;
+        background-size:100% 100%; 
+      } 
+      header{ 
+        width:100%; 
+        height:20%; 
+        background:linear-gradient(to right,cyan,green,yellow,rgb(232, 178, 79)); 
+        
+      }
+        h1{ 
+              font-size: 80px;
+              color:black;
+              text-align: center;
+             -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+} 
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+} 
+section{ 
+    background-color:cyan; 
+    width:50%; 
+    margin-left:auto; 
+    margin-right:auto;  
+    margin-top:30px;
+    height:75%; 
+    text-align:center; 
+
+} 
+input[type='text'], input[type='password'],input[type='number'],input[type='email']{ 
+    float:left;
+    width:400px; 
+    height:30px;
+}
+label,input[type='text'], input[type='password'],input[type='number'],input[type='email']{ 
+    margin-left:40px;
+}      
+input[type='submit']:active{  
+    transform:translateY(5px);
+
+} 
+
+
+    </style> 
+   
+    </head> 
+    <body>  
+        <header><h1>WELCOME TO <span style="font-style:itlaic">Kayal's Grocery </span></h1> 
+            <span style="font-size:30px;color:rgb(14, 141, 14)">Make a shopping smiple &#128521;</span> 
+        </header> 
+        <section>  
+            <span style="font-size:20px">REGISTRATION / SIGNUP</span><hr> 
+            <label style="font-size:25px;float:left">Full Name:    </label>  <br><br>
+            <input type="text" placeholder="enter your name" id="fullname" /><br><br>
+            <label style="font-size:25px;float:left">Email/Username:    </label> <br><br> 
+            <input type="email" placeholder="enter your email" id="email" /><br><br> 
+            <label style="font-size:25px;float:left" >Password:    </label> <br><br> 
+            <input type="password" placeholder="enter your password" id="password" /><br> <br>
+            <label style="font-size:25px;float:left" >Phone number:    </label><br><br>  
+            <input type="number" placeholder="enter your mobile number" id="mobileno" /><br><br>  
+            <label style="font-size:25px;float:left" >whats your favourite color?:    </label>  <br><br>
+            <input type="text" placeholder="choose your color" id="color" /><br>  <br>
+            <hr>
+            <input type="submit" value="Register" onclick="fun()" style="width:20%;background-color:lightgreen;height:50px;box-shadow:3px 5px black"   id="submit" />
+    
+
+
+
+        </section>
+        <script>   
+        function fun(){
+        var name=document.getElementById('fullname').value; 
+        var email=document.getElementById('email').value; 
+        var pass=document.getElementById('password').value; 
+        var phone=document.getElementById('mobileno').value; 
+        var fav=document.getElementById('color').value; 
+        if(localStorage.getItem("email")==email){  
+          window.open('file:///C:/Users/Mahalakshmi%20A/Desktop/miniproject/loginform.html','_parent');
+
+
+        }  
+        else{  
+          window.alert("Registration Successfull!Again click the register button to login!..")
+          localStorage.setItem("name",name); 
+          localStorage.setItem("email",email); 
+          localStorage.setItem("password",pass); 
+          localStorage.setItem("phoneno",phone); 
+          localStorage.setItem("favcolor",fav); 
+
+        }
+
+
+
+        }
+        </script>
+        
+    </body>
+ </html>
